@@ -472,6 +472,10 @@ footer {
 			text-decoration: none;
 			text-transform: uppercase;
 			color: $footerColor;
+
+			&:hover {
+				color: $linkActiveColor;
+			}
 		}
 	}
 

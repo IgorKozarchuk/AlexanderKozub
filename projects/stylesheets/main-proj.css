@@ -501,43 +501,47 @@ footer #language-footer a {
   text-transform: uppercase;
   color: #FFF;
 }
-/* line 478, ../sass/main-proj.scss */
+/* line 476, ../sass/main-proj.scss */
+footer #language-footer a:hover {
+  color: #1880E1;
+}
+/* line 482, ../sass/main-proj.scss */
 footer .dropdown-content-footer {
   position: absolute;
   display: none;
   right: 0;
   z-index: 1;
 }
-/* line 485, ../sass/main-proj.scss */
+/* line 489, ../sass/main-proj.scss */
 footer #language-footer:hover .dropdown-content-footer {
   display: block;
 }
-/* line 489, ../sass/main-proj.scss */
+/* line 493, ../sass/main-proj.scss */
 footer #copyright {
   margin-top: 20px;
   text-align: center;
   line-height: 1em;
 }
-/* line 494, ../sass/main-proj.scss */
+/* line 498, ../sass/main-proj.scss */
 footer #copyright i {
   margin-right: 0;
 }
-/* line 499, ../sass/main-proj.scss */
+/* line 503, ../sass/main-proj.scss */
 footer #developer {
   text-align: center;
   margin-top: 50px;
   color: #ccc;
   font-size: 13px;
 }
-/* line 505, ../sass/main-proj.scss */
+/* line 509, ../sass/main-proj.scss */
 footer #developer i {
   margin-right: 3px;
 }
-/* line 509, ../sass/main-proj.scss */
+/* line 513, ../sass/main-proj.scss */
 footer #developer a {
   color: #ccc;
 }
-/* line 512, ../sass/main-proj.scss */
+/* line 516, ../sass/main-proj.scss */
 footer #developer a:hover {
   color: #3D3D3D;
   background-color: #ccc;
