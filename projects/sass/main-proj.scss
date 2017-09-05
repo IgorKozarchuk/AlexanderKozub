@@ -160,8 +160,13 @@ body {
 		text-decoration: none;
 		color: $linkColor;
 		display: inline-block;
-		padding: 15px;
+		width: 40px;
+		height: 40px;
+		padding: 8px;
+		border-radius: 50%;
+		text-align: center;
 		background-color: transparentize($headerBg, 0.3);
+		
 		&:hover {
 			color: $linkActiveColor;
 			background-color: opacify($headerBg, 0.1);
@@ -250,7 +255,7 @@ body {
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	overflow: auto;
 	background-color: $modalBg;
 }
@@ -260,6 +265,7 @@ body {
 	margin: auto;
 	padding: 0;
 	max-width: 1600px;
+	height: 100%;
 }
 
 .close-btn {
@@ -281,7 +287,6 @@ body {
 
 .mySlides {
 	display: none;
-	height: 800px;
 	margin: 0 auto;
 
 	img {
@@ -316,10 +321,10 @@ body {
 .prev, .next {
 	cursor: pointer;
 	position: absolute;
-	top: 50vh;
+	top: 50%;
 	width: auto;
 	padding: 15px;
-	margin-top: -60px;
+	margin-top: -28px; // half of the button size
 	color: $closeBtnColor;
 	background-color: $prevNextBg;
 	font-weight: bold;
@@ -353,20 +358,21 @@ body {
 }
 
 .caption-container {
+	font-size: 14px;
 	text-align: center;
-	padding: 10px 16px;
 	color: $closeBtnHoverColor;
 	margin-bottom: 10px;
 }
 
 .dot-container {
 	text-align: center;
+	padding: 0 0 10px 0;
 }
 
 .dot {
 	display: inline-block;
-	width: 15px;
-	height: 15px;
+	width: 10px;
+	height: 10px;
 	margin: 0 4px;
 	border-radius: 50%;
 	background-color: $dotColor;
