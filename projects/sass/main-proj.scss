@@ -1,0 +1,515 @@
+// Import variables
+@import "vars-proj";
+
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+button:focus { // removes default blue outline onclick
+	outline: 0;
+}
+
+/* Main Style */
+html {
+	height: 100%; // sticky footer
+}
+
+body {
+	min-height: 100%; // sticky footer
+	height: 100%; // sticky footer - IE fix
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex; // sticky footer
+
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column; // sticky footer
+
+	font-family: $mainFont;
+	font-size: $mainFontSize;
+}
+
+.flex-content { // sticky footer
+	-webkit-flex: 1 0 auto; // 1 0 auto - fix for IE
+	-ms-flex: 1 0 auto;
+	flex: 1 0 auto;
+}
+// https://stackoverflow.com/questions/21600345/flexbox-and-internet-explorer-11-displayflex-in-html
+@-moz-document url-prefix() { // fix for Mozilla 
+	.flex-content {
+		flex: 1;
+	}
+}
+
+#fixedHeader {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+	background-color: $headerBg;
+	font-family: $navbarFont;
+}
+
+.navbar {
+	float: left;
+
+	li {
+		display: inline-block;
+		float: left;
+	}
+	li:last-child {
+		display: none;
+	}
+	a {
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 500;
+		color: $linkColor;
+		display: block;
+		padding: 15px;
+		width: 100%;
+		height: 100%;
+
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+.navbar.responsive {
+	position: relative;
+	
+	li:last-child {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+.social {
+	float: right;
+
+	li {
+		display: inline-block;
+		float: left;
+	}
+	a {
+		color: $linkColor;
+		display: block;
+		padding: 15px;
+		width: 100%;
+		height: 100%;
+
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+.content {
+	max-width: $contentWidth;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#top {
+	position: absolute;
+	top: 0;
+	right: 0;
+	a {
+		text-decoration: none;
+		color: $linkColor;
+		display: inline-block;
+		padding: 15px;
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+#top, #top-small {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.8s, visibility 0.8s;
+}
+
+#top.is-visible, #top-small.is-visible {
+	visibility: visible;
+	opacity: 1;
+}
+
+#top-small {
+	display: none;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+
+	a {
+		text-decoration: none;
+		color: $linkColor;
+		display: inline-block;
+		padding: 15px;
+		background-color: transparentize($headerBg, 0.3);
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+#language-container {
+	position: absolute;
+	top: 0;
+	display: inline-block;
+
+	a {
+		text-decoration: none;
+		color: $linkColor;
+		display: inline-block;
+		padding: 15px;
+		text-transform: uppercase;
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+.dropdown-content {
+	display: none;
+	background-color: $headerBg;
+	text-align: right;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+#language-container:hover .dropdown-content {
+	display: block;
+	
+	a {
+		display: block;
+	}
+}
+
+#title {
+	margin-top: 100px;
+	margin-bottom: 50px;
+	font-weight: 300;
+}
+
+.project {
+	margin-bottom: 60px;
+
+	img {
+		cursor: pointer;
+	}
+}
+
+.row {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.column {
+	flex: 1;
+	min-width: 400px;
+	position: relative;
+	height: 300px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-transition: 0.5s ease;
+	transition: 0.5s ease;
+	-webkit-backface-visibility: hidden; // FIX for opacity change with hover creates an image shift or distortion
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 3;
+	padding-top: 70px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: $modalBg;
+}
+
+.modal-content {
+	position: relative;
+	margin: auto;
+	padding: 0;
+	max-width: 1600px;
+}
+
+.close-btn {
+	color: $closeBtnColor;
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	font-family: Verdana, sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+	z-index: 3;
+}
+
+.close-btn:hover, .close-btn:focus {
+	color: $closeBtnHoverColor;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.mySlides {
+	display: none;
+	height: 800px;
+	margin: 0 auto;
+
+	img {
+		display: block;
+		max-width: 100%;
+		max-height: 100%;
+		margin: 0 auto;
+	}
+
+	-webkit-animation: myFade 1.5s;
+	animation: myFade 1.5s;
+}
+
+@-webkit-keyframes myFade {
+	from {
+		opacity: 0.4;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes myFade {
+	from {
+		opacity: 0.4;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50vh;
+	width: auto;
+	padding: 15px;
+	margin-top: -60px;
+	color: $closeBtnColor;
+	background-color: $prevNextBg;
+	font-weight: bold;
+	font-size: 20px;
+	-webkit-transition: 0.6s ease;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+	background-color: $prevNextHoverBg;
+	color: $closeBtnHoverColor;
+}
+
+.slideNumber {
+	position: absolute;
+	top: 0;
+	color: $slideNumberColor;
+	background-color: $prevNextBg;
+	font-size: 12px;
+	padding: 8px 12px;
+}
+
+.caption-container {
+	text-align: center;
+	padding: 10px 16px;
+	color: $closeBtnHoverColor;
+	margin-bottom: 10px;
+}
+
+.dot-container {
+	text-align: center;
+}
+
+.dot {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin: 0 4px;
+	border-radius: 50%;
+	background-color: $dotColor;
+	cursor: pointer;
+	transition: background-color 0.5s ease;
+}
+
+.active, .dot:hover {
+	background-color: $dotHoverColor;
+}
+
+footer {
+	color: $footerColor;
+	background-color: $footerBg;
+	padding: 50px 0;
+
+	h4 {
+		text-transform: uppercase;
+		font-weight: 500;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	p {
+		font-weight: 300;
+		line-height: 1.5em;
+		i {
+			width: 15px;
+			margin-right: 15px;
+		}
+	}
+
+	.flex-container {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+
+		-webkit-box-pack: center;
+		-moz-box-pack: center;
+		-ms-flex-pack: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+
+		-webkit-box-align: center;
+		-moz-box-align: center;
+
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		align-items: center;
+
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+
+		margin: 0 auto;
+		border-top: 1px solid $footerBorder;
+		border-bottom: 1px solid $footerBorder;
+		padding: 10px 0;
+	}
+
+	.flex-item {
+		-webkit-flex: 1 0 auto; // 1 0 auto - fix for IE
+		-ms-flex: 1 0 auto;
+		flex: 1 0 auto;
+		
+		min-width: 250px;
+	}
+	
+	.flex-item:last-child {
+		text-align: right;
+	}
+
+	.social-footer {
+		li {
+			display: inline-block;
+			line-height: 2em;
+		}
+		a {
+			color: $footerColor;
+			display: block;
+			padding: 0 0 0 15px;
+			width: 100%;
+			height: 100%;
+
+			&:hover {
+				color: $linkActiveColor;
+			}
+		}
+	}
+
+	#language-footer {
+		text-align: center;
+		position: relative;
+
+		a {
+			text-decoration: none;
+			text-transform: uppercase;
+			color: $footerColor;
+		}
+	}
+
+	.dropdown-content-footer {
+		position: absolute;
+		display: none;
+		right: 0;
+		z-index: 1;
+	}
+
+	#language-footer:hover .dropdown-content-footer {
+		display: block;
+	}
+
+	#copyright {
+		margin-top: 20px;
+		text-align: center;
+		line-height: 1em;
+
+		i {
+			margin-right: 0;
+		}
+	}
+
+	#developer {
+		text-align: center;
+		margin-top: 50px;
+		color: #ccc;
+		font-size: 13px;
+
+		i {
+			margin-right: 3px;
+		}
+
+		a {
+			color: #ccc;
+
+			&:hover {
+				color: $footerBg;
+				background-color: #ccc;
+			}
+		}
+	}
+}
+
+// Import media
+@import "media-proj";

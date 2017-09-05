@@ -1,0 +1,457 @@
+// Import variables
+@import "vars";
+
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+button:focus { // removes default blue outline onclick
+	outline: 0;
+}
+
+/* Main Style */
+html {
+	height: 100%; // sticky footer
+}
+
+body {
+	min-height: 100%; // sticky footer
+	height: 100%; // sticky footer - IE fix
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex; // sticky footer
+
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column; // sticky footer
+
+	font-family: $mainFont;
+	font-size: $mainFontSize;
+}
+
+.flex-content { // sticky footer
+	-webkit-flex: 1 0 auto; // 1 0 auto - fix for IE
+	-ms-flex: 1 0 auto;
+	flex: 1 0 auto;
+}
+// https://stackoverflow.com/questions/21600345/flexbox-and-internet-explorer-11-displayflex-in-html
+@-moz-document url-prefix() { // fix for Mozilla 
+	.flex-content {
+		flex: 1;
+	}
+}
+
+#fixedHeader {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+	background-color: $headerBg;
+	font-family: $navbarFont;
+}
+
+.navbar {
+	float: left;
+
+	li {
+		display: inline-block;
+		float: left; // removes spaces between li
+	}
+	li:last-child {
+		display: none;
+	}
+	a {
+		text-decoration: none;
+		text-transform: uppercase;
+		color: $linkColor;
+		display: block;
+		padding: 15px;
+		width: 100%;
+		height: 100%;
+
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+.navbar.responsive {
+	position: relative;
+	
+	li:last-child {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+.social {
+	float: right;
+
+	li {
+		display: inline-block;
+		float: left;
+	}
+	a {
+		color: $linkColor;
+		display: block;
+		padding: 15px;
+		width: 100%;
+		height: 100%;
+
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+.active {
+	color: $linkActiveColor !important;
+}
+
+.content {
+	max-width: $contentWidth;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#top {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	a {
+		text-decoration: none;
+		color: $linkColor;
+		display: inline-block;
+		padding: 15px;
+
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+#top, #top-small {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.8s, visibility 0.8s;
+}
+#top.is-visible, #top-small.is-visible {
+	visibility: visible;
+	opacity: 1;
+}
+
+#top-small {
+	display: none;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+
+	a {
+		text-decoration: none;
+		color: $linkColor;
+		display: inline-block;
+		padding: 15px;
+		background-color: transparentize($headerBg, 0.3);
+
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+#language-container {
+	position: absolute;
+	top: 0;
+	display: inline-block;
+
+	a {
+		text-decoration: none;
+		color: $linkColor;
+		display: inline-block;
+		padding: 15px;
+		text-transform: uppercase;
+
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+.dropdown-content {
+	display: none;
+	background-color: $headerBg;
+	text-align: right;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+#language-container:hover .dropdown-content {
+	display: block;
+
+	a {
+		display: block;
+	}
+}
+
+#logo-container {
+	margin-top: 53px;
+	padding: 60px 0 60px 0;
+}
+
+.main-logo {
+	width: 200px;
+	display: block; // to make image to be of a full height of a parent div
+	border-radius: 50%;
+}
+
+#title {
+	margin-bottom: 60px;
+
+	#title-heading {
+		text-transform: uppercase;
+		font-weight: 300;
+		margin-bottom: 20px;
+	}
+
+	#slogan {
+		font-family: $serifFont;
+		color: $sloganColor;
+		font-style: italic;
+		margin-bottom: 20px;
+	}
+
+	#title-about {
+		text-transform: uppercase;
+		color: $sloganColor;
+		font-size: 28px;
+		font-weight: 300;
+	}
+}
+
+// Portfolio styling
+#portfolio-title {
+	@extend #title;
+
+	margin-top: 90px;
+	margin-bottom: 20px;
+}
+
+.categories {
+	margin-bottom: 30px;
+}
+
+.category-btn {
+	display: inline-block;
+	font-family: $mainFont;
+	text-transform: uppercase;
+	font-size: 14px;
+	background-color: #FFF;
+	border: none;
+	padding: 8px 16px;
+	margin-right: 5px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+
+	&:hover {
+		background-color: $catBtnColor;
+	}
+}
+
+.active-cat {
+	background-color: $catBtnColor;
+}
+
+.projects {
+	margin-bottom: 60px;
+}
+
+.grid-item {
+	width: 25%;
+	overflow: hidden;
+}
+
+.grid-item-image {
+	display: block;
+	width: 100%;
+	position: relative;
+	height: 300px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
+	opacity: 0; // animate opacity with jQuery
+	-webkit-transition: 0.7s;
+	transition: 0.7s;
+
+	&:hover {
+		-webkit-filter: grayscale(100%);
+		-moz-filter: grayscale(100%);
+		-ms-filter: grayscale(100%);
+		filter: grayscale(100%);
+
+		-ms-transform: scale(1.3, 1.3) rotate(7deg);
+		-webkit-transform: scale(1.3, 1.3) rotate(7deg);
+		transform: scale(1.3, 1.3) rotate(7deg);
+		
+		-webkit-transition: 0.7s;
+		transition: 0.7s;
+	}
+}
+
+footer {
+	color: $footerColor;
+	background-color: $footerBg;
+	padding: 50px 0;
+
+	h4 {
+		text-transform: uppercase;
+		font-weight: 500;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	p {
+		font-weight: 300;
+		line-height: 1.5em;
+		
+		i {
+			width: 15px;
+			margin-right: 15px;
+		}
+	}
+
+	.flex-container {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+
+		-webkit-box-pack: center;
+		-moz-box-pack: center;
+		-ms-flex-pack: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+
+		-webkit-box-align: center;
+		-moz-box-align: center;
+
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		align-items: center;
+
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+
+		margin: 0 auto;
+		border-top: 1px solid $footerBorder;
+		border-bottom: 1px solid $footerBorder;
+		padding: 10px 0;
+	}
+
+	.flex-item {
+		-webkit-flex: 1 0 auto; // 1 0 auto - fix for IE
+		-ms-flex: 1 0 auto;
+		flex: 1 0 auto;
+
+		min-width: 250px;
+	}
+
+	.flex-item:last-child {
+		text-align: right;
+	}
+
+	.social-footer {
+		li {
+			display: inline-block;
+			line-height: 2em;
+		}
+		a {
+			color: $footerColor;
+			display: block;
+			padding: 0 0 0 15px;
+			width: 100%;
+			height: 100%;
+
+			&:hover {
+				color: $linkActiveColor;
+			}
+		}
+	}
+
+	#language-footer {
+		text-align: center;
+		position: relative;
+
+		a {
+			text-decoration: none;
+			text-transform: uppercase;
+			color: $footerColor;
+
+			&:hover {
+				color: $linkActiveColor;
+			}
+		}
+	}
+
+	.dropdown-content-footer {
+		position: absolute;
+		display: none;
+		right: 0;
+		z-index: 1;
+	}
+
+	#language-footer:hover .dropdown-content-footer {
+		display: block;
+	}
+
+	#copyright {
+		margin-top: 20px;
+		text-align: center;
+		line-height: 1em;
+
+		i {
+			margin-right: 0;
+		}
+	}
+
+	#developer {
+		text-align: center;
+		margin-top: 50px;
+		color: #ccc;
+		font-size: 13px;
+
+		i {
+			margin-right: 3px;
+		}
+
+		a {
+			color: #ccc;
+
+			&:hover {
+				color: $footerBg;
+				background-color: #ccc;
+			}
+		}
+	}
+}
+
+// Import media
+@import "media";

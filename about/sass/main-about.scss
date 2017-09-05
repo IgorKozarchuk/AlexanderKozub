@@ -1,0 +1,482 @@
+// Import variables
+@import "vars-about";
+
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+button:focus { // removes default blue outline onclick
+	outline: 0;
+}
+
+/* Main Style */
+html {
+	height: 100%; // sticky footer
+}
+
+body {
+	min-height: 100%; // sticky footer
+	height: 100%; // sticky footer - IE fix
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex; // sticky footer
+
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column; // sticky footer
+
+	font-family: $mainFont;
+	font-size: $mainFontSize;
+}
+
+.flex-content { // sticky footer
+	-webkit-flex: 1 0 auto; // 1 0 auto - fix for IE
+	-ms-flex: 1 0 auto;
+	flex: 1 0 auto;
+}
+// https://stackoverflow.com/questions/21600345/flexbox-and-internet-explorer-11-displayflex-in-html
+@-moz-document url-prefix() { // fix for Mozilla 
+	.flex-content {
+		flex: 1;
+	}
+}
+
+#fixedHeader {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+	background-color: $headerBg;
+	font-family: $navbarFont;
+}
+
+.navbar {
+	float: left;
+
+	li {
+		display: inline-block;
+		float: left;
+	}
+	li:last-child {
+		display: none;
+	}
+	a {
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 500;
+		color: $linkColor;
+		display: block;
+		padding: 15px;
+		width: 100%;
+		height: 100%;
+
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+.navbar.responsive {
+	position: relative;
+
+	li:last-child {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+.social {
+	float: right;
+
+	li {
+		display: inline-block;
+		float: left;
+	}
+	a {
+		color: $linkColor;
+		display: block;
+		padding: 15px;
+		width: 100%;
+		height: 100%;
+
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+.active {
+	color: $linkActiveColor !important;
+}
+
+.content {
+	max-width: $contentWidth;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#top {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	a {
+		text-decoration: none;
+		color: $linkColor;
+		display: inline-block;
+		padding: 15px;
+
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+#top, #top-small {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.8s, visibility 0.8s;
+}
+
+#top.is-visible, #top-small.is-visible {
+	visibility: visible;
+	opacity: 1;
+}
+
+#top-small {
+	display: none;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+
+	a {
+		text-decoration: none;
+		color: $linkColor;
+		display: inline-block;
+		padding: 15px;
+		background-color: transparentize($headerBg, 0.3);
+
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+#language-container {
+	position: absolute;
+	top: 0;
+	display: inline-block;
+
+	a {
+		text-decoration: none;
+		color: $linkColor;
+		display: inline-block;
+		padding: 15px;
+		text-transform: uppercase;
+
+		&:hover {
+			color: $linkActiveColor;
+			background-color: opacify($headerBg, 0.1);
+		}
+	}
+}
+
+.dropdown-content {
+	display: none;
+	background-color: $headerBg;
+	text-align: right;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+#language-container:hover .dropdown-content {
+	display: block;
+
+	a {
+		display: block;
+	}
+}
+
+.main-content {
+	max-width: 1400px;
+	margin: 80px auto 60px;
+	
+	i {
+		color: $accentColor;
+		margin-right: 5px;
+	}
+	hr {
+		border-top: 1px solid #C8C8C8;
+		margin-top: 5px;
+	}
+	ul {
+		padding-left: 50px;
+	}
+	&::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+}
+
+.left-col, .right-col {
+	padding: 1%;
+	float: left;
+}
+
+.left-col {
+	width: 34%;
+
+	@media screen and (max-width: 680px) {
+		width: 100%;
+	}
+}
+
+.right-col {
+	width: 66%;
+
+	@media screen and (max-width: 680px) {
+		width: 100%;
+	}
+}
+
+.card {
+	background-color: #F9F9F9;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 10px;
+}
+
+.top-card {
+	margin-bottom: 14px;
+}
+
+.photo-container {
+	padding: 20px;
+
+	img {
+		width: 100%;
+		border-radius: 50%;
+	}
+	h2 {
+		text-align: center;
+		padding-top: 5px;
+	}
+}
+
+.info {
+	margin-bottom: 10px;
+	p:last-of-type {
+		padding-bottom: 15px;
+	}
+
+	@media screen and (max-width: 800px) {
+		padding: 0;
+	}
+	@media screen and (max-width: 680px) {
+		padding: 0 20px;
+	}
+}
+
+.info, .skills, .languages, .about-me, .terms {
+	padding: 0 20px;
+
+	@media screen and (max-width: 800px) {
+		padding: 0;
+	}
+	@media screen and (max-width: 680px) {
+		padding: 0 20px;
+	}
+}
+
+.skills, .languages {
+	h3 {
+		padding: 8px 0 5px 0;
+	}
+}
+
+.languages {
+	padding-bottom: 15px;
+}
+
+.about-me {
+	h2 {
+		padding: 20px 0;
+	}
+	p {
+		padding-bottom: 15px;
+	}
+}
+
+.terms {
+	h3 {
+		padding: 20px 0;
+	}
+	p {
+		padding-bottom: 15px;
+	}
+	a {
+		color: $accentColor;
+
+	}
+}
+
+.badge {
+	background-color: $accentColor;
+	color: #FFF;
+	padding: 4px 6px;
+	border-radius: 4px;
+}
+
+footer {
+	color: $footerColor;
+	background-color: $footerBg;
+	padding: 50px 0;
+
+	h4 {
+		text-transform: uppercase;
+		font-weight: 500;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	p {
+		font-weight: 300;
+		line-height: 1.5em;
+		i {
+			width: 15px;
+			margin-right: 15px;
+		}
+	}
+
+	.flex-container {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+
+		-webkit-box-pack: center;
+		-moz-box-pack: center;
+		-ms-flex-pack: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+
+		-webkit-box-align: center;
+		-moz-box-align: center;
+
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		align-items: center;
+
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+
+		margin: 0 auto;
+		border-top: 1px solid $footerBorder;
+		border-bottom: 1px solid $footerBorder;
+		padding: 10px 0;
+	}
+
+	.flex-item {
+		-webkit-flex: 1 0 auto; // 1 0 0 - fix for IE
+		-ms-flex: 1 0 auto;
+		flex: 1 0 auto;
+		
+		min-width: 250px;
+	}
+	
+	.flex-item:last-child {
+		text-align: right;
+	}
+
+	.social-footer {
+		li {
+			display: inline-block;
+			line-height: 2em;
+		}
+		a {
+			color: $footerColor;
+			display: block;
+			padding: 0 0 0 15px;
+			width: 100%;
+			height: 100%;
+
+			&:hover {
+				color: $linkActiveColor;
+			}
+		}
+	}
+
+	#language-footer {
+		text-align: center;
+		position: relative;
+
+		a {
+			text-decoration: none;
+			text-transform: uppercase;
+			color: $footerColor;
+
+			&:hover {
+				color: $linkActiveColor;
+			}
+		}
+	}
+
+	.dropdown-content-footer {
+		position: absolute;
+		display: none;
+		right: 0;
+		z-index: 1;
+	}
+
+	#language-footer:hover .dropdown-content-footer {
+		display: block;
+	}
+
+	#copyright {
+		margin-top: 20px;
+		text-align: center;
+		line-height: 1em;
+
+		i {
+			margin-right: 0;
+		}
+	}
+
+	#developer {
+		text-align: center;
+		margin-top: 50px;
+		color: #ccc;
+		font-size: 13px;
+
+		i {
+			margin-right: 3px;
+		}
+
+		a {
+			color: #ccc;
+
+			&:hover {
+				color: $footerBg;
+				background-color: #ccc;
+			}
+		}
+	}
+}
+
+// Import media
+@import "media-about";
