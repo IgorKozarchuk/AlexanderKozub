@@ -255,8 +255,8 @@ body {
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 100vh;
-	overflow: auto;
+	height: 100%;
+	//overflow: auto;
 	background-color: $modalBg;
 }
 
@@ -288,16 +288,30 @@ body {
 .mySlides {
 	display: none;
 	margin: 0 auto;
+	height: 100%;
+	text-align: center; /* align the inline(-block) elements horizontally */
+	font: 0/0 a; /* remove the gap between inline(-block) elements !!! */
 
 	img {
-		display: block;
+		display: inline-block;
 		max-width: 100%;
 		max-height: 100%;
 		margin: 0 auto;
+		vertical-align: middle; // /* vertical alignment of the inline element */
+		font: 16px/1 Arial sans-serif; // /* reset the font property */
 	}
 
-	-webkit-animation: myFade 1.5s;
-	animation: myFade 1.5s;
+	-webkit-animation: myFade 1s;
+	animation: myFade 1s;
+}
+
+// vertical align image
+// https://stackoverflow.com/questions/18516317/vertically-align-an-image-inside-a-div-with-responsive-height
+.mySlides::before { /* create a full-height inline-block pseudo-element */
+	content: " ";
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
 }
 
 @-webkit-keyframes myFade {
@@ -353,19 +367,28 @@ body {
 	top: 0;
 	color: $slideNumberColor;
 	background-color: $prevNextBg;
+	font-family: $mainFont;
 	font-size: 12px;
 	padding: 8px 12px;
 }
 
 .caption-container {
+	position: absolute; // to avoid double scrollbar
+	left: 0; // center align absolutely positioned elements
+	right: 0; // center align absolutely positioned element
+	margin: auto; // center align absolutely positioned element
+	text-align: center; // center align absolutely positioned element
 	font-size: 14px;
-	text-align: center;
 	color: $closeBtnHoverColor;
-	margin-bottom: 10px;
 }
 
 .dot-container {
-	text-align: center;
+	position: absolute; // to avoid double scrollbar
+	top: 18px;
+	left: 0; // center align absolutely positioned elements
+	right: 0; // center align absolutely positioned element
+	margin: auto; // center align absolutely positioned element
+	text-align: center; // center align absolutely positioned element
 	padding: 0 0 10px 0;
 }
 
