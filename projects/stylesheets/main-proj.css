@@ -324,7 +324,7 @@ body {
 .mySlides img {
   display: inline-block;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 90%;
   margin: 0 auto;
   vertical-align: middle;
   font: 16px/1 Arial sans-serif;
@@ -632,44 +632,54 @@ footer #developer a:hover {
   #language-container {
     right: 0;
   }
+
+  /* line 57, ../sass/_media-proj.scss */
+  .mySlides img {
+    max-height: 100%;
+  }
 }
 @media only screen and (max-device-width: 800px) and (orientation: landscape) {
-  /* line 59, ../sass/_media-proj.scss */
+  /* line 63, ../sass/_media-proj.scss */
   .modal {
     padding-top: 40px;
   }
 
-  /* line 63, ../sass/_media-proj.scss */
+  /* line 67, ../sass/_media-proj.scss */
   .caption-container, .dot-container {
     display: none;
   }
 
-  /* line 67, ../sass/_media-proj.scss */
+  /* line 71, ../sass/_media-proj.scss */
   .close-btn {
     top: 10px;
     right: 10px;
     font-size: 18px;
   }
+
+  /* line 77, ../sass/_media-proj.scss */
+  .mySlides img {
+    max-height: 100%;
+  }
 }
 @media screen and (max-width: 980px) {
-  /* line 76, ../sass/_media-proj.scss */
+  /* line 84, ../sass/_media-proj.scss */
   #title {
     padding-left: 15px;
   }
 
-  /* line 80, ../sass/_media-proj.scss */
+  /* line 88, ../sass/_media-proj.scss */
   footer {
     padding-left: 15px;
     padding-right: 15px;
   }
 }
 @media screen and (max-width: 1100px) {
-  /* line 87, ../sass/_media-proj.scss */
+  /* line 95, ../sass/_media-proj.scss */
   #top {
     display: none;
   }
 
-  /* line 91, ../sass/_media-proj.scss */
+  /* line 99, ../sass/_media-proj.scss */
   #top-small {
     display: block;
   }
