@@ -41,13 +41,20 @@
 	}
 
 	.modal {
-		padding-top: 40px;
+		//padding-top: 40px;
 	}
 
 	.close-btn {
-		top: 10px;
+		top: 5px;
 		right: 10px;
-		font-size: 18px;
+		font-size: 20px;
+		height: 24px;
+		width: 24px;
+		color: $closeBtnHoverColor;
+		background-color: $prevNextBg;
+		border-radius: 50%;
+		text-align: center;
+		line-height: 1;
 	}
 
 	#language-container {
@@ -56,12 +63,20 @@
 
 	.mySlides img {
 		max-height: 100%;
+		margin-top: 0;
+	}
+
+	.prev, .next {
+		padding: 10px;
+		font-size: 20px;
+		margin-top: -24px;
+		color: $closeBtnHoverColor;
 	}
 }
 
 @media only screen and (max-device-width: 800px) and (orientation: landscape) {
 	.modal {
-		padding-top: 40px;
+		padding-top: 0;
 	}
 
 	.caption-container, .dot-container {
@@ -69,9 +84,23 @@
 	}
 
 	.close-btn {
-		top: 10px;
+		top: 5px;
 		right: 10px;
-		font-size: 18px;
+		font-size: 20px;
+		height: 24px;
+		width: 24px;
+		color: $closeBtnHoverColor;
+		background-color: $prevNextBg;
+		border-radius: 50%;
+		text-align: center;
+		line-height: 1;
+	}
+
+	.prev, .next {
+		padding: 10px;
+		font-size: 20px;
+		margin-top: -24px;
+		color: $closeBtnHoverColor;
 	}
 
 	.mySlides img {
