@@ -40,10 +40,6 @@
 		display: none;
 	}
 
-	.modal {
-		//padding-top: 40px;
-	}
-
 	.close-btn {
 		top: 5px;
 		right: 10px;
@@ -112,6 +108,10 @@
 @media screen and (max-width: 980px) {
 	#title {
 		padding-left: 15px;
+	}
+
+	.column {
+		flex: 0 1 50%;
 	}
 
 	footer {

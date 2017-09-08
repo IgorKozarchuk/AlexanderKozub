@@ -250,8 +250,7 @@ body {
 
 /* line 232, ../sass/main-proj.scss */
 .column {
-  flex: 1;
-  min-width: 400px;
+  flex: 0 1 25%;
   position: relative;
   height: 300px;
   background-position: 50% 50%;
@@ -262,12 +261,12 @@ body {
   -webkit-backface-visibility: hidden;
   cursor: pointer;
 }
-/* line 245, ../sass/main-proj.scss */
+/* line 244, ../sass/main-proj.scss */
 .column:hover {
   opacity: 0.8;
 }
 
-/* line 250, ../sass/main-proj.scss */
+/* line 249, ../sass/main-proj.scss */
 .modal {
   display: none;
   position: fixed;
@@ -280,7 +279,7 @@ body {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* line 262, ../sass/main-proj.scss */
+/* line 261, ../sass/main-proj.scss */
 .modal-content {
   position: relative;
   margin: auto;
@@ -288,7 +287,7 @@ body {
   height: 100%;
 }
 
-/* line 269, ../sass/main-proj.scss */
+/* line 268, ../sass/main-proj.scss */
 .close-btn {
   color: #888;
   position: absolute;
@@ -300,14 +299,14 @@ body {
   z-index: 3;
 }
 
-/* line 280, ../sass/main-proj.scss */
+/* line 279, ../sass/main-proj.scss */
 .close-btn:hover, .close-btn:focus {
   color: #F0F0F0;
   text-decoration: none;
   cursor: pointer;
 }
 
-/* line 286, ../sass/main-proj.scss */
+/* line 285, ../sass/main-proj.scss */
 .mySlides {
   display: none;
   margin: 0 auto;
@@ -319,7 +318,7 @@ body {
   -webkit-animation: myFade 1s;
   animation: myFade 1s;
 }
-/* line 293, ../sass/main-proj.scss */
+/* line 292, ../sass/main-proj.scss */
 .mySlides img {
   display: inline-block;
   max-width: 100%;
@@ -329,7 +328,7 @@ body {
   font: 16px/1 Arial sans-serif;
 }
 
-/* line 308, ../sass/main-proj.scss */
+/* line 307, ../sass/main-proj.scss */
 .mySlides::before {
   /* create a full-height inline-block pseudo-element */
   content: " ";
@@ -354,7 +353,7 @@ body {
     opacity: 1;
   }
 }
-/* line 333, ../sass/main-proj.scss */
+/* line 332, ../sass/main-proj.scss */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -375,19 +374,19 @@ body {
   user-select: none;
 }
 
-/* line 353, ../sass/main-proj.scss */
+/* line 352, ../sass/main-proj.scss */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* line 358, ../sass/main-proj.scss */
+/* line 357, ../sass/main-proj.scss */
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.7);
   color: #F0F0F0;
 }
 
-/* line 363, ../sass/main-proj.scss */
+/* line 362, ../sass/main-proj.scss */
 .slideNumber {
   position: absolute;
   top: 0;
@@ -398,7 +397,7 @@ body {
   padding: 8px 12px;
 }
 
-/* line 373, ../sass/main-proj.scss */
+/* line 372, ../sass/main-proj.scss */
 .caption-container {
   position: absolute;
   left: 0;
@@ -409,7 +408,7 @@ body {
   color: #F0F0F0;
 }
 
-/* line 383, ../sass/main-proj.scss */
+/* line 382, ../sass/main-proj.scss */
 .dot-container {
   position: absolute;
   top: 18px;
@@ -420,7 +419,7 @@ body {
   padding: 0 0 10px 0;
 }
 
-/* line 393, ../sass/main-proj.scss */
+/* line 392, ../sass/main-proj.scss */
 .dot {
   display: inline-block;
   width: 10px;
@@ -432,35 +431,35 @@ body {
   transition: background-color 0.5s ease;
 }
 
-/* line 404, ../sass/main-proj.scss */
+/* line 403, ../sass/main-proj.scss */
 .active, .dot:hover {
   background-color: #1880E1;
 }
 
-/* line 408, ../sass/main-proj.scss */
+/* line 407, ../sass/main-proj.scss */
 footer {
   color: #FFF;
   background-color: #3D3D3D;
   padding: 50px 0;
 }
-/* line 413, ../sass/main-proj.scss */
+/* line 412, ../sass/main-proj.scss */
 footer h4 {
   text-transform: uppercase;
   font-weight: 500;
   text-align: center;
   margin-bottom: 20px;
 }
-/* line 419, ../sass/main-proj.scss */
+/* line 418, ../sass/main-proj.scss */
 footer p {
   font-weight: 300;
   line-height: 1.5em;
 }
-/* line 422, ../sass/main-proj.scss */
+/* line 421, ../sass/main-proj.scss */
 footer p i {
   width: 15px;
   margin-right: 15px;
 }
-/* line 428, ../sass/main-proj.scss */
+/* line 427, ../sass/main-proj.scss */
 footer .flex-container {
   display: -webkit-box;
   display: -moz-box;
@@ -485,23 +484,23 @@ footer .flex-container {
   border-bottom: 1px solid #888;
   padding: 10px 0;
 }
-/* line 458, ../sass/main-proj.scss */
+/* line 457, ../sass/main-proj.scss */
 footer .flex-item {
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   min-width: 250px;
 }
-/* line 466, ../sass/main-proj.scss */
+/* line 465, ../sass/main-proj.scss */
 footer .flex-item:last-child {
   text-align: right;
 }
-/* line 471, ../sass/main-proj.scss */
+/* line 470, ../sass/main-proj.scss */
 footer .social-footer li {
   display: inline-block;
   line-height: 2em;
 }
-/* line 475, ../sass/main-proj.scss */
+/* line 474, ../sass/main-proj.scss */
 footer .social-footer a {
   color: #FFF;
   display: block;
@@ -509,62 +508,62 @@ footer .social-footer a {
   width: 100%;
   height: 100%;
 }
-/* line 482, ../sass/main-proj.scss */
+/* line 481, ../sass/main-proj.scss */
 footer .social-footer a:hover {
   color: #1880E1;
 }
-/* line 488, ../sass/main-proj.scss */
+/* line 487, ../sass/main-proj.scss */
 footer #language-footer {
   text-align: center;
   position: relative;
 }
-/* line 492, ../sass/main-proj.scss */
+/* line 491, ../sass/main-proj.scss */
 footer #language-footer a {
   text-decoration: none;
   text-transform: uppercase;
   color: #FFF;
 }
-/* line 497, ../sass/main-proj.scss */
+/* line 496, ../sass/main-proj.scss */
 footer #language-footer a:hover {
   color: #1880E1;
 }
-/* line 503, ../sass/main-proj.scss */
+/* line 502, ../sass/main-proj.scss */
 footer .dropdown-content-footer {
   position: absolute;
   display: none;
   right: 0;
   z-index: 1;
 }
-/* line 510, ../sass/main-proj.scss */
+/* line 509, ../sass/main-proj.scss */
 footer #language-footer:hover .dropdown-content-footer {
   display: block;
 }
-/* line 514, ../sass/main-proj.scss */
+/* line 513, ../sass/main-proj.scss */
 footer #copyright {
   margin-top: 20px;
   text-align: center;
   line-height: 1em;
 }
-/* line 519, ../sass/main-proj.scss */
+/* line 518, ../sass/main-proj.scss */
 footer #copyright i {
   margin-right: 0;
 }
-/* line 524, ../sass/main-proj.scss */
+/* line 523, ../sass/main-proj.scss */
 footer #developer {
   text-align: center;
   margin-top: 50px;
   color: #ccc;
   font-size: 13px;
 }
-/* line 530, ../sass/main-proj.scss */
+/* line 529, ../sass/main-proj.scss */
 footer #developer i {
   margin-right: 3px;
 }
-/* line 534, ../sass/main-proj.scss */
+/* line 533, ../sass/main-proj.scss */
 footer #developer a {
   color: #ccc;
 }
-/* line 537, ../sass/main-proj.scss */
+/* line 536, ../sass/main-proj.scss */
 footer #developer a:hover {
   color: #3D3D3D;
   background-color: #ccc;
@@ -615,7 +614,7 @@ footer #developer a:hover {
     display: none;
   }
 
-  /* line 47, ../sass/_media-proj.scss */
+  /* line 43, ../sass/_media-proj.scss */
   .close-btn {
     top: 5px;
     right: 10px;
@@ -629,18 +628,18 @@ footer #developer a:hover {
     line-height: 1;
   }
 
-  /* line 60, ../sass/_media-proj.scss */
+  /* line 56, ../sass/_media-proj.scss */
   #language-container {
     right: 0;
   }
 
-  /* line 64, ../sass/_media-proj.scss */
+  /* line 60, ../sass/_media-proj.scss */
   .mySlides img {
     max-height: 100%;
     margin-top: 0;
   }
 
-  /* line 69, ../sass/_media-proj.scss */
+  /* line 65, ../sass/_media-proj.scss */
   .prev, .next {
     padding: 10px;
     font-size: 20px;
@@ -649,17 +648,17 @@ footer #developer a:hover {
   }
 }
 @media only screen and (max-device-width: 800px) and (orientation: landscape) {
-  /* line 78, ../sass/_media-proj.scss */
+  /* line 74, ../sass/_media-proj.scss */
   .modal {
     padding-top: 0;
   }
 
-  /* line 82, ../sass/_media-proj.scss */
+  /* line 78, ../sass/_media-proj.scss */
   .caption-container, .dot-container {
     display: none;
   }
 
-  /* line 86, ../sass/_media-proj.scss */
+  /* line 82, ../sass/_media-proj.scss */
   .close-btn {
     top: 5px;
     right: 10px;
@@ -673,7 +672,7 @@ footer #developer a:hover {
     line-height: 1;
   }
 
-  /* line 99, ../sass/_media-proj.scss */
+  /* line 95, ../sass/_media-proj.scss */
   .prev, .next {
     padding: 10px;
     font-size: 20px;
@@ -681,15 +680,20 @@ footer #developer a:hover {
     color: #F0F0F0;
   }
 
-  /* line 106, ../sass/_media-proj.scss */
+  /* line 102, ../sass/_media-proj.scss */
   .mySlides img {
     max-height: 100%;
   }
 }
 @media screen and (max-width: 980px) {
-  /* line 113, ../sass/_media-proj.scss */
+  /* line 109, ../sass/_media-proj.scss */
   #title {
     padding-left: 15px;
+  }
+
+  /* line 113, ../sass/_media-proj.scss */
+  .column {
+    flex: 0 1 50%;
   }
 
   /* line 117, ../sass/_media-proj.scss */
