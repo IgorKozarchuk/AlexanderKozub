@@ -26,6 +26,10 @@
 		min-width: 100%;
 	}
 
+	#back-to-port {
+		display: none;
+	}
+
 	#language-container {
 		right: 40px !important;
 	}
@@ -71,6 +75,10 @@
 }
 
 @media only screen and (max-device-width: 800px) and (orientation: landscape) {
+	#back-to-port {
+		display: none;
+	}
+
 	.modal {
 		padding-top: 0;
 	}
