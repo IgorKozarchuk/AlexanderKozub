@@ -55,20 +55,14 @@ function currentSlide(n) {
 
 showSlides(slideIndex);
 
-// use arrow keys to change image
+// use arrow keys to change image and Esc to exit full screen mode
 document.onkeydown = function(event) {
 	event = event || window.event;
 	if (event.keyCode == "37") { // left key pressed
 		plusSlide(-1); // show previous image
 	} else if (event.keyCode == "39") {
 		plusSlide(1); // show next image
-	}
-}
-
-// press Esc to exit full screen mode
-document.onkeydown = function (event) {
-	event = event || window.event;
-	if (event.keyCode == "27") { // if Esc pressed
+	} else if (event.keyCode == "27") { // Esc pressed
 		closeModal();
 	}
 }
