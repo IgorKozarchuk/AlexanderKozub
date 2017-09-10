@@ -473,7 +473,7 @@ footer #developer a:hover {
   background-color: #ccc;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
   /* line 4, ../sass/_media.scss */
   .category-btn {
     font-size: 13px;
@@ -515,7 +515,7 @@ footer #developer a:hover {
     right: 40px !important;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 780px) {
   /* line 43, ../sass/_media.scss */
   .social {
     display: none;
