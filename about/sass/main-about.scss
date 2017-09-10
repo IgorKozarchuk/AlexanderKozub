@@ -295,7 +295,7 @@ body {
 	}
 }
 
-.info, .skills, .languages, .about-me, .terms {
+.info, .skills, .languages, .about-me {
 	padding: 0 20px;
 
 	@media screen and (max-width: 800px) {
@@ -322,19 +322,7 @@ body {
 	}
 	p {
 		padding-bottom: 15px;
-	}
-}
-
-.terms {
-	h3 {
-		padding: 20px 0;
-	}
-	p {
-		padding-bottom: 15px;
-	}
-	a {
-		color: $accentColor;
-
+		font-size: 24px;
 	}
 }
 
