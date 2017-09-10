@@ -64,3 +64,11 @@ document.onkeydown = function(event) {
 		plusSlide(1); // show next image
 	}
 }
+
+// press Esc to exit full screen mode
+document.onkeydown = function (event) {
+	event = event || window.event;
+	if (event.keyCode == "27") { // if Esc pressed
+		closeModal();
+	}
+}
