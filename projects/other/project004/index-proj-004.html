@@ -10,8 +10,8 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2:300,300i,500,500i,600,600i">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play:400,700">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="icon" href="../images/logos/icon.png">
-		<link rel="stylesheet" href="../stylesheets/main.css">
+		<link rel="icon" href="../../../images/logos/icon.png">
+		<link rel="stylesheet" href="../../stylesheets/main-proj.css">
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
 	</head>
 	<body>
@@ -23,9 +23,9 @@
 
 				<nav>
 					<ul class="navbar" id="topnav">
-						<li><a href="../index.html">Home</a></li>
-						<li><a href="#" class="active" id="home-link">Portfolio</a></li>
-						<li><a href="../about/index-about.html">About</a></li>
+						<li><a href="../../../index.html" id="home-link">Home</a></li>
+						<li><a href="../../../portfolio/index-portfolio.html">Portfolio</a></li>
+						<li><a href="../../../about/index-about.html">About</a></li>
 						<li><a href="#footer" id="contact-link">Contact</a></li>
 						<li><a href="javascript:void(0);" id="hamburger-icon"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
 					</ul>
@@ -42,7 +42,7 @@
 				<div id="language-container">
 					<a href="javascript:void(0)"><i class="fa fa-globe" aria-hidden="true"></i> En</a>
 					<div class="dropdown-content">
-						<a href="index-portfolio-ru.html" hreflang="ru">Ru</a>
+						<a href="index-proj-004-ru.html" hreflang="ru">Ru</a>
 					</div>
 				</div>
 
@@ -58,54 +58,89 @@
 		<!-- flex-content -->
 		<div class="flex-content">
 			
-			<!-- Title -->
-			<div id="portfolio-title">
-				<div class="content">
-					<h1 id="title-heading">My Portfolio</h1>
-				</div>
+			<div class="content">
+				<h2 id="title">Project004</h2>
 			</div>
-			<!-- END Title -->
+		
+			<!-- Project -->
+			<div class="project">
+				
+				<div class="row">
+					<div class="column" style="background-image: url(images/previews/project004-prev001.jpg);" onclick="openModal(); currentSlide(1)" class="hover-opacity">
+					</div>
+					<div class="column" style="background-image: url(images/previews/project004-prev002.jpg);" onclick="openModal(); currentSlide(2)" class="hover-opacity">
+					</div>
+					<div class="column" style="background-image: url(images/previews/project004-prev003.jpg);" onclick="openModal(); currentSlide(3)" class="hover-opacity">
+					</div>
+					<div class="column" style="background-image: url(images/previews/project004-prev004.jpg);" onclick="openModal(); currentSlide(4)" class="hover-opacity">
+					</div>
+					<div class="column" style="background-image: url(images/previews/project004-prev005.jpg);" onclick="openModal(); currentSlide(5)" class="hover-opacity">
+					</div>
+					<div class="column" id="back-to-port">
+						<div class="table">
+							<a href="../../../portfolio/index-portfolio.html"><i class="fa fa-reply" aria-hidden="true"></i><br>Back to Portfolio</a>
+						</div>
+					</div>
+				</div>
 
-			<!-- Categories -->
-			<div class="categories">
-				<div class="content">
-					<div class="filter-button-group">
-						<button class="category-btn active-cat" data-filter="*">All</button>
-						<button class="category-btn" data-filter=".interior">Interior</button>
-						<button class="category-btn" data-filter=".exterior">Exterior</button>
-						<button class="category-btn" data-filter=".other">Other</button>
+				<div id="myModal" class="modal">
+
+					<span class="close-btn" onclick="closeModal()">&times;</span>
+
+					<div class="modal-content">
+
+						<div class="caption-container">
+							<p id="caption"></p>
+						</div>
+
+						<div class="dot-container">
+							<span class="dot" onclick="currentSlide(1)"></span>
+							<span class="dot" onclick="currentSlide(2)"></span>
+							<span class="dot" onclick="currentSlide(3)"></span>
+							<span class="dot" onclick="currentSlide(4)"></span>
+							<span class="dot" onclick="currentSlide(5)"></span>
+						</div>
+
+						<div class="mySlides">
+							<div class="slideNumber"></div>
+							<a href="images/project004-001.jpg" target="_blank">
+								<img src="images/project004-001.jpg" alt="Headphones image 1">
+							</a>
+						</div>
+						<div class="mySlides">
+							<div class="slideNumber"></div>
+							<a href="images/project004-002.jpg" target="_blank">
+								<img src="images/project004-002.jpg" alt="Headphones image 2">
+							</a>
+						</div>
+						<div class="mySlides">
+							<div class="slideNumber"></div>
+							<a href="images/project004-003.jpg" target="_blank">
+								<img src="images/project004-003.jpg" alt="Headphones image 3">
+							</a>
+						</div>
+						<div class="mySlides">
+							<div class="slideNumber"></div>
+							<a href="images/project004-004.jpg" target="_blank">
+								<img src="images/project004-004.jpg" alt="Headphones image 4">
+							</a>
+						</div>
+						<div class="mySlides">
+							<div class="slideNumber"></div>
+							<a href="images/project004-005.jpg" target="_blank">
+								<img src="images/project004-005.jpg" alt="Headphones image 5">
+							</a>
+						</div>
+
+						<a class="prev" onclick="plusSlide(-1)">&#10094;</a>
+						<a class="next" onclick="plusSlide(1)">&#10095;</a>
+
 					</div>
+
 				</div>
+
 			</div>
-			<!-- END Categories -->
-			
-			<!-- Projects -->
-			<div class="projects">
-				<div class="grid">
-					<div class="grid-item interior">
-						<a href="../projects/interior/project001/index-proj-001.html"><div class="grid-item-image" style="background-image: url(../images/projects/interior/project001.jpg);"></div></a>
-					</div>
-					<div class="grid-item exterior">
-						<a href="#"><div class="grid-item-image" style="background-image: url(../images/projects/exterior/image001.jpg);"></div></a>
-					</div>
-					<div class="grid-item interior">
-						<a href="../projects/interior/project002/index-proj-002.html"><div class="grid-item-image" style="background-image: url(../images/projects/interior/project002.jpg);"></div></a>
-					</div>
-					<div class="grid-item other">
-						<a href="../projects/other/project004/index-proj-004.html"><div class="grid-item-image" style="background-image: url(../images/projects/other/project004.jpg);"></div></a>
-					</div>
-					<div class="grid-item exterior">
-						<a href="#"><div class="grid-item-image" style="background-image: url(../images/projects/exterior/image006.jpg);"></div></a>
-					</div>
-					<div class="grid-item interior">
-						<a href="../projects/interior/project003/index-proj-003.html"><div class="grid-item-image" style="background-image: url(../images/projects/interior/project003.jpg);"></div></a>
-					</div>
-					<div class="grid-item other">
-						<a href="../projects/other/project005/index-proj-005.html"><div class="grid-item-image" style="background-image: url(../images/projects/other/project005.jpg);"></div></a>
-					</div>
-				</div>
-			</div>
-			<!-- END Projects -->
+			<!-- END Project -->
 
 			<div id="top-small">
 				<a href="#" id="up-btn-s"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
@@ -132,7 +167,7 @@
 					<div id="language-footer">
 						<a href="javascript:void(0)"><i class="fa fa-globe" aria-hidden="true"></i> En</a>
 						<div class="dropdown-content-footer">
-							<a href="index-portfolio-ru.html" hreflang="ru">Ru</a>
+							<a href="index-proj-004-ru.html" hreflang="ru">Ru</a>
 						</div>
 					</div>
 
@@ -158,10 +193,8 @@
 		<!-- END Footer -->
 		
 		<!-- Scripts -->
-		<script src="../scripts/toggleMenu.js"></script>
-		<script src="../scripts/scrollTop.js"></script>
-		<script src="../scripts/isotope.pkgd.min.js"></script>
-		<script src="../scripts/imagesloaded.pkgd.min.js"></script>
-		<script src="../scripts/filter.js"></script>
+		<script src="../../../scripts/toggleMenu.js"></script>
+		<script src="../../../scripts/scrollTop.js"></script>
+		<script src="../../scripts/lightbox.js"></script>
 	</body>
 </html>
