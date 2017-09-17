@@ -75,7 +75,6 @@ body {
 .navbar a {
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 500;
   color: #000;
   display: block;
   padding: 15px;
@@ -466,7 +465,7 @@ body {
 }
 
 /* line 436, ../sass/main-proj.scss */
-.active, .dot:hover {
+.active-slide, .dot:hover {
   background-color: #1880E1;
 }
 

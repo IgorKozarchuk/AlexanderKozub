@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="icon" href="../images/logos/icon.png">
 		<link rel="stylesheet" href="../stylesheets/main.css">
+		<link rel="stylesheet" href="../projects/stylesheets/main-proj.css">
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 	</head>
 	<body>
@@ -84,42 +85,88 @@
 				<div class="grid">
 
 					<div class="grid-item interior">
-						<a href="../projects/interior/project001/index-proj-001-ru.html"><div class="grid-item-image" style="background-image: url(../images/projects/interior/project001.jpg);"></div></a>
+						<a href="../projects/interior/project001/index-proj-001-ru.html"><div class="grid-item-image" style="background-image: url(../projects/interior/project001/images/preview/project001-prev001.jpg);"></div></a>
 					</div>
 					<div class="grid-item exterior">
-						<a href="#"><div class="grid-item-image" style="background-image: url(../images/projects/exterior/image001.jpg);"></div></a>
+						<a href="#"><div class="grid-item-image" style="background-image: url(../projects/exterior/project013/images/preview/project013-prev001.jpg);"></div></a>
 					</div>
 					<div class="grid-item interior">
-						<a href="../projects/interior/project002/index-proj-002-ru.html"><div class="grid-item-image" style="background-image: url(../images/projects/interior/project002.jpg);"></div></a>
+						<a href="../projects/interior/project002/index-proj-002-ru.html"><div class="grid-item-image" style="background-image: url(../projects/interior/project002/images/preview/project002-prev001.jpg);"></div></a>
 					</div>
 					<div class="grid-item other">
-						<a href="../projects/other/project004/index-proj-004-ru.html"><div class="grid-item-image" style="background-image: url(../images/projects/other/project004.jpg);"></div></a>
+						<a href="../projects/other/project004/index-proj-004-ru.html"><div class="grid-item-image" style="background-image: url(../projects/other/project004/images/preview/project004-prev001.jpg);"></div></a>
 					</div>
 					<div class="grid-item exterior">
-						<a href="#"><div class="grid-item-image" style="background-image: url(../images/projects/exterior/image006.jpg);"></div></a>
+						<a href="#"><div class="grid-item-image" style="background-image: url(../projects/exterior/project014/images/preview/project014-prev001.jpg);"></div></a>
 					</div>
 					<div class="grid-item interior">
-						<a href="../projects/interior/project003/index-proj-003-ru.html"><div class="grid-item-image" style="background-image: url(../images/projects/interior/project003.jpg);"></div></a>
+						<a href="../projects/interior/project003/index-proj-003-ru.html"><div class="grid-item-image" style="background-image: url(../projects/interior/project003/images/preview/project003-prev001.jpg);"></div></a>
 					</div>
 					<div class="grid-item other">
-						<a href="../projects/other/project005/index-proj-005-ru.html"><div class="grid-item-image" style="background-image: url(../images/projects/other/project005.jpg);"></div></a>
+						<a href="../projects/other/project005/index-proj-005-ru.html"><div class="grid-item-image" style="background-image: url(../projects/other/project005/images/preview/project005-prev001.jpg);"></div></a>
 					</div>
 					<div class="grid-item other">
-						<a href="../projects/other/project006/index-proj-006-ru.html"><div class="grid-item-image" style="background-image: url(../images/projects/other/project006.jpg);"></div></a>
+						<a href="../projects/other/project006/index-proj-006-ru.html"><div class="grid-item-image" style="background-image: url(../projects/other/project006/images/preview/project006-prev001.jpg);"></div></a>
 					</div>
 					<div class="grid-item other">
-						<a href="../projects/other/project007/index-proj-007-ru.html"><div class="grid-item-image" style="background-image: url(../images/projects/other/project007.jpg);"></div></a>
+						<a href="../projects/other/project007/index-proj-007-ru.html"><div class="grid-item-image" style="background-image: url(../projects/other/project007/images/preview/project007-prev001.jpg);"></div></a>
 					</div>
 					<div class="grid-item other">
-						<a href="../projects/other/project008/index-proj-008-ru.html"><div class="grid-item-image" style="background-image: url(../images/projects/other/project008.jpg);"></div></a>
+						<a href="../projects/other/project008/index-proj-008-ru.html"><div class="grid-item-image" style="background-image: url(../projects/other/project008/images/preview/project008-prev001.jpg);"></div></a>
 					</div>
 					<div class="grid-item other">
-						<a href="../projects/other/project009/index-proj-009-ru.html"><div class="grid-item-image" style="background-image: url(../images/projects/other/project009.jpg);"></div></a>
+						<div class="grid-item-image hover-opacity" style="background-image: url(../projects/other/project009/images/preview/project009-prev.jpg);" onclick="openModal(); currentSlide(1)"></div>
+					</div>
+					<div class="grid-item other">
+						<div class="grid-item-image hover-opacity" style="background-image: url(../projects/other/project010/images/preview/project010-prev.jpg);" onclick="openModal(); currentSlide(2)"></div>
+					</div>
+					<div class="grid-item other">
+						<div class="grid-item-image hover-opacity" style="background-image: url(../projects/other/project011/images/preview/project011-prev.jpg);" onclick="openModal(); currentSlide(3)"></div>
+					</div>
+					<div class="grid-item other">
+						<div class="grid-item-image hover-opacity" style="background-image: url(../projects/other/project012/images/preview/project012-prev.jpg);" onclick="openModal(); currentSlide(4)"></div>
 					</div>
 					
 				</div>
 			</div>
 			<!-- END Projects -->
+
+			<!-- Modal -->
+			<div id="myModal" class="modal">
+
+				<span class="close-btn" onclick="closeModal()">&times;</span>
+
+				<div class="modal-content">
+
+					<div class="caption-container">
+						<p id="caption"></p>
+					</div>
+
+					<div class="mySlides">
+						<a href="../projects/other/project009/images/project009.jpg" target="_blank">
+							<img src="../projects/other/project009/images/project009.jpg" alt="Проект009 - Диван">
+						</a>
+					</div>
+					<div class="mySlides">
+						<a href="../projects/other/project010/images/project010.jpg" target="_blank">
+							<img src="../projects/other/project010/images/project010.jpg" alt="Проект010 - Стол">
+						</a>
+					</div>
+					<div class="mySlides">
+						<a href="../projects/other/project011/images/project011.jpg" target="_blank">
+							<img src="../projects/other/project011/images/project011.jpg" alt="Проект011 - Зеркало и цветы">
+						</a>
+					</div>
+					<div class="mySlides">
+						<a href="../projects/other/project012/images/project012.jpg" target="_blank">
+							<img src="../projects/other/project012/images/project012.jpg" alt="Проект012 - Кованая стойка">
+						</a>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- END Modal -->
 
 			<div id="top-small">
 				<a href="#" id="up-btn-s"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
@@ -177,5 +224,6 @@
 		<script src="../scripts/isotope.pkgd.min.js"></script>
 		<script src="../scripts/imagesloaded.pkgd.min.js"></script>
 		<script src="scripts/filter-portfolio.js"></script>
+		<script src="scripts/lightbox-portfolio.js"></script>
 	</body>
 </html>
