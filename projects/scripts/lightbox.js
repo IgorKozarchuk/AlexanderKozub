@@ -89,7 +89,7 @@ function handleTouchStart(evt) {
 };                                                
 
 function handleTouchMove(evt) {
-    if ( ! xDown || ! yDown ) {
+    if (!xDown || !yDown) {
         return;
     }
 
@@ -99,20 +99,20 @@ function handleTouchMove(evt) {
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
 
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) { /*most significant*/
-        if ( xDiff > 0 ) { /* left swipe */ 
+    if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant
+        if (xDiff > 0) { // left swipe
             plusSlide(1);
-        } else { /* right swipe */
+        } else { // right swipe
             plusSlide(-1);
         }                       
     } else {
-        if ( yDiff > 0 ) { /* up swipe */ 
+        if (yDiff > 0) { // up swipe
             
-        } else { /* down swipe */
+        } else { // down swipe
            
         }                                                                 
     }
-    /* reset values */
+    // reset values
     xDown = null;
     yDown = null;                                             
 };
