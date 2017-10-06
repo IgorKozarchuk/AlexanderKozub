@@ -99,13 +99,13 @@ function handleTouchMove(evt) {
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
 
-    if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant
+    if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant, horizontal swipe
         if (xDiff > 0) { // left swipe
             plusSlide(1);
         } else { // right swipe
             plusSlide(-1);
         }                       
-    } else {
+    } else { // vertical swipe
         if (yDiff > 0) { // up swipe
             
         } else { // down swipe
