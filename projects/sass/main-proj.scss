@@ -329,10 +329,9 @@ body {
 		margin: 44px auto 0 auto;
 		vertical-align: middle; // /* vertical alignment of the inline element */
 		font: 16px/1 Arial sans-serif; // /* reset the font property */
+		-webkit-animation: myFade 1s;
+		animation: myFade 1s;
 	}
-
-	-webkit-animation: myFade 1s;
-	animation: myFade 1s;
 }
 
 // vertical align image
