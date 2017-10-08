@@ -2,16 +2,16 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="description" content="3D Visualization by Alexander Kozub. About Me">
+		<meta name="description" content="3D Visualization by Alexander Kozub. Portfolio">
 		<meta name="keywords" content="3D Visualization, 3D Rendering, 3D Modelling, 3ds Max, Portfolio">
 		<meta name="author" content="Alexander Kozub">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>About Me - Alexander Kozub</title>
+		<title>3D Visualization - Alexander Kozub</title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2:300,300i,500,500i,600,600i">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play:400,700">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="icon" href="../images/logos/icon.png">
-		<link rel="stylesheet" href="stylesheets/main-about.css">
+		<link rel="icon" href="../../../images/logos/icon.png">
+		<link rel="stylesheet" href="../../stylesheets/main-proj.css">
 	</head>
 	<body>
 
@@ -22,9 +22,9 @@
 
 				<nav>
 					<ul class="navbar" id="topnav">
-						<li><a href="../index.html">Home</a></li>
-						<li><a href="../portfolio/index-portfolio.html">Portfolio</a></li>
-						<li><a href="#" class="active" id="home-link">About</a></li>
+						<li><a href="../../../index.html" id="home-link">Home</a></li>
+						<li><a href="../../../portfolio/portfolio.html">Portfolio</a></li>
+						<li><a href="../../../about/about.html">About</a></li>
 						<li><a href="#footer" id="contact-link">Contact</a></li>
 						<li><a href="javascript:void(0);" id="hamburger-icon"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
 					</ul>
@@ -41,7 +41,7 @@
 				<div id="language-container">
 					<a href="javascript:void(0)"><i class="fa fa-globe" aria-hidden="true"></i> En</a>
 					<div class="dropdown-content">
-						<a rel="alternate" hreflang="ru" href="index-about-ru.html">Ru</a>
+						<a rel="alternate" hreflang="ru" href="project-004-ru.html">Ru</a>
 					</div>
 				</div>
 
@@ -56,70 +56,90 @@
 		
 		<!-- flex-content -->
 		<div class="flex-content">
-
-			<!-- main-content -->
-			<div class="main-content">
-				<!-- Left column -->
-				<div class="left-col">
-					<div class="card">
-
-						<div class="photo-container">
-							<img src="../images/avatar.jpg" alt="Alexander Kozub">
-							<h2>Alexander Kozub</h2>
+			
+			<div class="content">
+				<h2 id="title">Project004</h2>
+			</div>
+		
+			<!-- Project -->
+			<div class="project">
+				
+				<div class="row">
+					<div class="column" style="background-image: url(images/preview/project004-prev001.jpg);" onclick="openModal(); currentSlide(1)">
+					</div>
+					<div class="column" style="background-image: url(images/preview/project004-prev002.jpg);" onclick="openModal(); currentSlide(2)">
+					</div>
+					<div class="column" style="background-image: url(images/preview/project004-prev003.jpg);" onclick="openModal(); currentSlide(3)">
+					</div>
+					<div class="column" style="background-image: url(images/preview/project004-prev004.jpg);" onclick="openModal(); currentSlide(4)">
+					</div>
+					<div class="column" style="background-image: url(images/preview/project004-prev005.jpg);" onclick="openModal(); currentSlide(5)">
+					</div>
+					<div class="column" id="back-to-port">
+						<div class="table">
+							<a href="../../../portfolio/portfolio.html"><i class="fa fa-reply" aria-hidden="true"></i><br>Back to Portfolio</a>
 						</div>
-
-						<div class="info">
-							<p><i class="fa fa-briefcase fa-fw" aria-hidden="true"></i>3D Artist</p>
-							<p><i class="fa fa-home fa-fw" aria-hidden="true"></i>Kyiv, Ukraine</p>
-							<hr>
-						</div>
-
-						<div class="skills">
-							<h3><i class="fa fa-asterisk fa-fw" aria-hidden="true"></i>Skills</h3>
-							<ul>
-								<li>3Ds Max</li>
-								<li>V-Ray</li>
-								<li>Corona</li>
-								<li>Terragen</li>
-								<li>ArchiCAD</li>
-								<li>Adobe Photoshop</li>
-								<li>ptgui, etc.</li>
-							</ul>
-						</div>
-
-						<div class="languages">
-							<h3><i class="fa fa-globe fa-fw" aria-hidden="true"></i>Languages</h3>
-							<ul>
-								<li>Russian</li>
-								<li>Ukrainian</li>
-								<li>English</li>
-							</ul>
-						</div>
-
 					</div>
 				</div>
-				<!-- END Left column -->
 
-				<!-- Right column -->
-				<div class="right-col">
-					<div class="card top-card">
-						
-						<div class="about-me">
-							<h2>About me</h2>
-							<p>Hi!</p>
-							<p>My name is Alexander, and I'm a freelance 3D visualizer based in Kyiv, Ukraine.</p>
-							<p>I am responsible, diligent, and always approach the solution of problems fast and creatively. I have strong sense of initiative and ability to convert needs and ideas into action, ability to work independently and manage team work, good interpersonal and communication skills, ability to work under pressure. It’s easy to deal with me, because I love my job!</p>
-							<p>I specialize in professional visualization and modeling objects of any complexity for more than 5 years. I cooperate with many designers and architects from Ukraine, Russia, England and other countries. I have a specialized education, as well as two certificates from intensive computer graphics and modeling courses.</p>
-							<p>I have a passion for creating beautiful renders for different types of projects. I can also help with searching references, textures and 3D models. I’d love to bring your design ideas to 3D life!</p>
-							<p>I am available for freelance, contract or direct client projects. Whatever project you have in mind do get in touch, and we will work on it together.</p>
+				<div id="myModal" class="modal">
+
+					<span class="close-btn" onclick="closeModal()">&times;</span>
+
+					<div class="modal-content">
+
+						<div class="caption-container">
+							<p id="caption"></p>
 						</div>
 
+						<div class="dot-container">
+							<span class="dot" onclick="currentSlide(1)"></span>
+							<span class="dot" onclick="currentSlide(2)"></span>
+							<span class="dot" onclick="currentSlide(3)"></span>
+							<span class="dot" onclick="currentSlide(4)"></span>
+							<span class="dot" onclick="currentSlide(5)"></span>
+						</div>
+
+						<div class="mySlides">
+							<div class="slideNumber"></div>
+							<a href="images/project004-001.jpg" target="_blank">
+								<img src="images/project004-001.jpg" alt="Headphones image 1">
+							</a>
+						</div>
+						<div class="mySlides">
+							<div class="slideNumber"></div>
+							<a href="images/project004-002.jpg" target="_blank">
+								<img src="images/project004-002.jpg" alt="Headphones image 2">
+							</a>
+						</div>
+						<div class="mySlides">
+							<div class="slideNumber"></div>
+							<a href="images/project004-003.jpg" target="_blank">
+								<img src="images/project004-003.jpg" alt="Headphones image 3">
+							</a>
+						</div>
+						<div class="mySlides">
+							<div class="slideNumber"></div>
+							<a href="images/project004-004.jpg" target="_blank">
+								<img src="images/project004-004.jpg" alt="Headphones image 4">
+							</a>
+						</div>
+						<div class="mySlides">
+							<div class="slideNumber"></div>
+							<a href="images/project004-005.jpg" target="_blank">
+								<img src="images/project004-005.jpg" alt="Headphones image 5">
+							</a>
+						</div>
+
+						<a class="prev" onclick="plusSlide(-1)">&#10094;</a>
+						<a class="next" onclick="plusSlide(1)">&#10095;</a>
+
 					</div>
+
 				</div>
-				<!-- END Right column -->
 
 			</div>
-			<!-- END main-content -->
+			<!-- END Project -->
 
 			<div id="top-small">
 				<a href="#" id="up-btn-s"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
@@ -146,7 +166,7 @@
 					<div id="language-footer">
 						<a href="javascript:void(0)"><i class="fa fa-globe" aria-hidden="true"></i> En</a>
 						<div class="dropdown-content-footer">
-							<a rel="alternate" hreflang="ru" href="index-about-ru.html">Ru</a>
+							<a rel="alternate" hreflang="ru" href="project-004-ru.html">Ru</a>
 						</div>
 					</div>
 
@@ -173,7 +193,8 @@
 		
 		<!-- Scripts -->
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
-		<script src="../scripts/toggleMenu.js"></script>
-		<script src="../scripts/scrollTop.js"></script>
+		<script src="../../../scripts/toggleMenu.js"></script>
+		<script src="../../../scripts/scrollTop.js"></script>
+		<script src="../../scripts/lightbox.js"></script>
 	</body>
 </html>
