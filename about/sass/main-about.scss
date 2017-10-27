@@ -40,6 +40,8 @@ body {
 
 	font-family: $mainFont;
 	font-size: $mainFontSize;
+
+	//overflow-y: scroll; // to avoid page twitching when selecting Exterior with little content
 }
 
 .flex-content { // sticky footer
